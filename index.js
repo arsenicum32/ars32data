@@ -1,0 +1,3 @@
+var atext = {
+  loc: 'en'
+}
