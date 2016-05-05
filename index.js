@@ -5,7 +5,7 @@ if(typeof $ == 'undefined'){
 var atext = {
   navobj: navigator.language.slice(0,2) || 'en',
   g: function(file, callback, err){
-      !callback?callback=function(){}:void(0);!err?err=function(){}:void(0);!file?return;void(0);
+      !callback?callback=function(){}:void(0);!err?err=function(){}:void(0);!file?return 0;void(0);
       $.ajax({
          url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+atext.navobj+"/" + file + '.json',
          dataType: 'json', // Notice! JSONP <-- P (lowercase)
