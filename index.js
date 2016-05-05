@@ -15,6 +15,17 @@ var atext = {
     }
   },
   data: {},
+  getany: function(arr){
+    var jsonprofile  =  {};
+    for(var i = 0; i < arr.length; i++){
+      if(typeof arr[i] === typeof ''){
+        atext.dthelp.gdata( arr[i] , function(data){
+          jsonprofile[ arr[i] ] = data;
+        }, function(err){ console.log(err); });
+      }
+    }
+    return jsonprofile;
+  },
   fire: function(callback){
     var fin = {};
     for(var n = 0; n< atext.dtjson.length; n++ ){
