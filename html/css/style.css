@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: Gill Sans;
+}
+body h1,
+body p {
+  margin: auto;
+  margin-top: 1.2em;
+  width: 80%;
+}
