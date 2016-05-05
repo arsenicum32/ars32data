@@ -17,7 +17,7 @@ var atext = {
   data: {},
   fire: function(callback){
     var fin = {};
-    for(var n in atext.dtjson){
+    for(var n = 0; n< atext.dtjson.length; n++ ){
       atext.dthelp.gdata( atext.dtjson[n] , function(data){
         atext.data[ atext.dtjson[n] ] = data;
         fin[ atext.dtjson[n] ] = data;
