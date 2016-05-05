@@ -16,10 +16,14 @@ var atext = {
   },
   data: {},
   fire: function(callback){
+    var fin = {};
     for(var n in atext.dtjson){
-      atext.dthelp.gdata( atext.dtjson[n] , function(data){ atext.data[ atext.dtjson[n] ] = data }, function(err){ console.log(err); });
+      atext.dthelp.gdata( atext.dtjson[n] , function(data){
+        atext.data[ atext.dtjson[n] ] = data;
+        fin[ atext.dtjson[n] ] = data;
+      }, function(err){ console.log(err); });
     }
-    if (callback) callback(atext.data);
+    if (callback) callback(fin);
   },
   dtjson: ['about']
 }
