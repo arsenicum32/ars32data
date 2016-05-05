@@ -32,9 +32,9 @@ var atext = {
       atext.dthelp.gdata( atext.dtjson[n] , function(data){
         atext.data[ atext.dtjson[n] ] = data;
         fin[ atext.dtjson[n] ] = data;
+        if( n === atext.dtjson.length -1 && callback) callback(fin);
       }, function(err){ console.log(err); });
     }
-    if (callback) callback(fin);
   },
   dtjson: ['about','test']
 }
