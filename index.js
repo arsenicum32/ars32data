@@ -21,10 +21,10 @@ var atext = {
       if(typeof arr[i] === typeof ''){
         atext.dthelp.gdata( arr[i] , function(data){
           jsonprofile[ arr[i] ] = data;
+          if(i == arr.length - 1) return jsonprofile;
         }, function(err){ console.log(err); });
       }
     }
-    return jsonprofile;
   },
   fire: function(callback){
     var fin = {};
