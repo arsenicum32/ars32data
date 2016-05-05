@@ -25,5 +25,5 @@ var atext = {
     }
     if (callback) callback(fin);
   },
-  dtjson: ['about']
+  dtjson: ['about','test']
 }
