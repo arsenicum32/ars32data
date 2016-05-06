@@ -8,8 +8,7 @@
         margin: 0;
         font-family: Gill Sans;
       }
-      body h1,
-      body p {
+      .about-bend {
         margin: auto;
         margin-top: 1.2em;
         width: 80%;
@@ -17,16 +16,16 @@
     </style>
   </head>
  <body>
-  <h1></h1>
-  <p>загрузка...</p>
+  <h1 class="about-bend"></h1>
+  <p class="about-bend">загрузка...</p>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script>
   $.ajax({
      url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+(navigator.language.slice(0,2) || 'en')+"/about.json",
      dataType: 'json', // Notice! JSONP <-- P (lowercase)
      success:function(json){
-         $('h1').text(json.h1);
-         $('p').text(json.p);
+         $('h1 .about-bend').text(json.h1);
+         $('p .about-bend').text(json.p);
      },
      error:function(){
          $('h1').text('sww');
