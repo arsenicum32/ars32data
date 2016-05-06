@@ -3,11 +3,13 @@ if(typeof $ == 'undefined'){
   document.write('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>');
 }
 var atext = {
+  langs: ['en', 'ru'],
   navobj: navigator.language.slice(0,2) || 'en',
   g: function(file, callback, err){
       !callback?callback=function(){}:void(0);!err?err=function(){}:void(0);
+      var lang = atext.langs.indexOf(atext.navobj) !== -1 ? atext.navobj : 'en';
       $.ajax({
-         url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+atext.navobj+"/" + file + '.json',
+         url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+lang+"/" + file + '.json',
          dataType: 'json', // Notice! JSONP <-- P (lowercase)
          success: callback,
          error: err
