@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>university</title>
+    <style>
+      .chess-bend1,
+      .chess-bend2,
+      .chess-bend3 {
+        margin: auto;
+        margin-top: 1.2em;
+        width: 80%;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+ <body>
+  <h1 class="chess-bend1"></h1>
+  <p class="chess-bend2">загрузка...</p>
+  <a href='#' class="chess-bend3">ссылка</a>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script>
+  $.ajax({
+     url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+(navigator.language.slice(0,2) || 'en')+"/chess.json",
+     dataType: 'json', // Notice! JSONP <-- P (lowercase)
+     success:function(json){
+         $('.chess-bend1').text(json.h1);
+         $('.chess-bend2').text(json.p);
+         $('.chess-bend3').text(json.link);
+         $('.chess-bend3').attr('href', json.link);
+     },
+     error:function(){
+         $('h1').text('sww');
+     }
+});
+  </script>
+  </body>
+</html>
