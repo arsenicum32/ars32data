@@ -8,9 +8,9 @@
         margin: 0;
         font-family: Gill Sans;
       }
-      .chess-bend1,
-      .chess-bend2,
-      .chess-bend3 {
+      .im-p,
+      .im-link,
+      #im-links {
         margin: auto;
         margin-top: 1.2em;
         width: 80%;
@@ -29,7 +29,7 @@
      success:function(json){
          $('.im-p').text(json.p);
          for(var n in json.links){
-           $('#im-links').append('<a href="' +json.links[n] + '>'+n+'</a>');
+           $('#im-links').append('<a href="' +json.links[n] + ' class="im-link">'+n+'</a>');
          }
      },
      error:function(){
