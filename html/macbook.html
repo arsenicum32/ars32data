@@ -9,8 +9,7 @@
         font-family: Gill Sans;
       }
       .macbook-p,
-      .macbook-div,
-      #macbook-links {
+      .macbook-div {
         margin: auto;
         margin-top: 1.2em;
         width: 80%;
@@ -33,10 +32,9 @@
          for(var n in json.works){
            $('#macbook-links').append('\
            <div class="macbook-div">\
-            <hr>\
               <h6>'+json.works[n].name+'</h6><br>\
               <p>'+json.works[n].desc+'</p><br>\
-              <a href="' +json.works[n].link + '" class="macbook-link">☞</a><br>\
+              <a href="' +json.works[n].link + '" class="macbook-link" style="font-size: 3em">☞</a><br>\
             <hr>\
            </div>');
          }
