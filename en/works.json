@@ -2,6 +2,10 @@
   "p": "Full list of my works",
   "works": [
     {
+      "name": "undefined",
+      "desc": "shelf e-shop for polytech fest",
+      "link": "http://undefined.tk"
+    },{
       "name": "lab site",
       "desc": "website for metaclay laboratory",
       "link": "http://test-polymer.ru"
