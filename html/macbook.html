@@ -1,1 +1,50 @@
-<h1>macbook</h1>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>university</title>
+    <style>
+      body{
+        margin: 0;
+        font-family: Gill Sans;
+      }
+      .macbook-p,
+      .macbook-div,
+      #macbook-links {
+        margin: auto;
+        margin-top: 1.2em;
+        width: 80%;
+      }
+      .macbook-link{
+        text-decoration: none;
+      }
+    </style>
+  </head>
+ <body>
+  <p class="macbook-p"></p>
+  <div id='macbook-links'></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script>
+  $.ajax({
+     url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+(navigator.language.slice(0,2) || 'en')+"/works.json",
+     dataType: 'json', // Notice! JSONP <-- P (lowercase)
+     success:function(json){
+         $('.macbook-p').text(json.p);
+         for(var n in json.works){
+           $('#macbook-links').append('\
+           <div class="macbook-div">\
+            <hr>\
+              <h6>'+json.works[n].name+'</h6><br>\
+              <p>'+json.works[n].desc+'</p><br>\
+              <a href="' +json.works[n].link + '" class="macbook-link">☞</a><br>\
+            <hr>\
+           </div>');
+         }
+     },
+     error:function(){
+         $('.macbook-p').text('sww');
+     }
+});
+  </script>
+  </body>
+</html>
