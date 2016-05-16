@@ -1,1 +1,38 @@
-<h1>coffee</h1>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>university</title>
+    <style>
+      body{
+        margin: 0;
+        font-family: Gill Sans;
+      }
+      .coffee-p,
+      #coffee-donate {
+        margin: auto;
+        margin-top: 1.2em;
+        width: 80%;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+ <body>
+  <p class="coffee-p"></p>
+  <div id='coffee-donate'></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script>
+  $.ajax({
+     url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+(navigator.language.slice(0,2) || 'en')+"/coffee.json",
+     dataType: 'json', // Notice! JSONP <-- P (lowercase)
+     success:function(json){
+         $('.coffee-p').text(json.p);
+         $('#coffee-donate').html(json.donate);
+     },
+     error:function(){
+         $('.coffee-p').text('sww');
+     }
+});
+  </script>
+  </body>
+</html>
