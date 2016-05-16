@@ -8,11 +8,17 @@
         margin: 0;
         font-family: Gill Sans;
       }
-      .macbook-p,
-      .macbook-div {
+      .macbook-p{
         margin: auto;
         margin-top: 1.2em;
         width: 80%;
+      }
+      .macbook-div{
+        margin: auto;
+        width: 80%;
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+        margin-bottom: 0;
       }
       .macbook-link{
         text-decoration: none;
@@ -32,10 +38,9 @@
          for(var n in json.works){
            $('#macbook-links').append('\
            <div class="macbook-div">\
-              <h6>'+json.works[n].name+'</h6><br>\
-              <p>'+json.works[n].desc+'</p><br>\
+              <h3 style="margin: 0; margin-left: 10%;">'+json.works[n].name+'</h3><br>\
+              <p style="margin: 0; margin-left: 10%;">'+json.works[n].desc+'</p><br>\
               <a href="' +json.works[n].link + '" class="macbook-link" style="font-size: 3em">☞</a><br>\
-            <hr>\
            </div>');
          }
      },
