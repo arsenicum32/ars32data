@@ -22,7 +22,7 @@
  <body>
   <h2 class="chess-bend1"></h1>
   <p class="chess-bend2">загрузка...</p>
-  <a href='#' class="chess-bend3">ссылка</a>
+  <a href='#' id="chess-link">☞</a>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script>
   $.ajax({
@@ -31,7 +31,6 @@
      success:function(json){
          $('.chess-bend1').text(json.h2);
          $('.chess-bend2').text(json.p);
-         $('#chess-link').text('☞');
          $('#chess-link').attr('href', json.link);
      },
      error:function(){
