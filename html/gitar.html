@@ -1,1 +1,38 @@
-<h1>gitar</h1>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>university</title>
+    <style>
+      body{
+        margin: 0;
+        font-family: Gill Sans;
+      }
+      .gitar-p,
+      .gitar-a {
+        margin: auto;
+        margin-top: 1.2em;
+        width: 80%;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+ <body>
+  <p class="gitar-p"></p>
+  <a class='gitar-a'>☞</a>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script>
+  $.ajax({
+     url:"https://raw.githubusercontent.com/arsenicum32/ars32data/gh-pages/"+(navigator.language.slice(0,2) || 'en')+"/gitar.json",
+     dataType: 'json', // Notice! JSONP <-- P (lowercase)
+     success:function(json){
+         $('.gitar-p').text(json.p);
+         $('.gitar-a').attr('href',json.link);
+     },
+     error:function(){
+         $('.gitar-p').text('sww');
+     }
+});
+  </script>
+  </body>
+</html>
