@@ -10,10 +10,11 @@
       }
       .chess-bend1,
       .chess-bend2,
-      .chess-bend3 {
+      #chess-link {
         margin: auto;
         margin-top: 1.2em;
         width: 80%;
+        left: 10%;
         text-decoration: none;
       }
     </style>
@@ -30,8 +31,8 @@
      success:function(json){
          $('.chess-bend1').text(json.h2);
          $('.chess-bend2').text(json.p);
-         $('.chess-bend3').text(json.link);
-         $('.chess-bend3').attr('href', json.link);
+         $('#chess-link').text('☞');
+         $('#chess-link').attr('href', json.link);
      },
      error:function(){
          $('h1').text('sww');
