@@ -1,1 +1,87 @@
-<h1>order</h1>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>order</title>
+    <style>
+    #ffull {
+      width: 100vw;
+      height: 100vh;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+    #dummyframe {
+      display: none;
+    }
+    form {
+      width: 120px;
+    }
+    #changeform {
+      font-size: 3em;
+      border: 0;
+      cursor: pointer;
+      color: #00f;
+    }
+    form p {
+      font-size: 1.25em;
+      background: #00f;
+      color: #fff;
+      padding: 5px;
+      width: 120px;
+    }
+    #superfiled {
+      height: 150px;
+    }
+    input,
+    textarea {
+      border: 2px solid #000;
+      background: #fff;
+      outline: none;
+      -webkit-transition: 900ms ease all;
+      transition: 900ms ease all;
+      resize: none;
+    }
+    input:focus,
+    textarea:focus {
+      background: #000;
+      color: #fff;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <div id='ffull'>
+  <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+  <form action="" target="dummyframe" method="POST">
+    <p>Я компания и готов с вами работать</p>
+    <input name="entry.1466569310" jsname="L9xHkb" placeholder='имя' />
+    <input name="entry.1763318685" jsname="L9xHkb" placeholder='компания' />
+    <input name="entry.580571137" jsname="L9xHkb" placeholder='email или телефон' />
+    <!--   <input name="fvv" value="1" /> -->
+    <input type="submit" name="submit" id='changeform' value="☞" />
+  </form>
+</div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script>
+    $("#changeform").on('click', function(){
+      $(this).closest('form').html('<textarea id="superfiled"></textarea>');
+      var t=0,inter = setInterval(function(){
+        var st = 'Спасибо за заявку! Свяжусь с вами в течении дня...';
+        t<st.length?t++:clearInterval(inter);
+        $('#superfiled').val( st.substring(0,t) );
+      }, 90);
+    });
+    </script>
+  </body>
+</html>
