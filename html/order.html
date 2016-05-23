@@ -80,7 +80,7 @@
     <script>
     $("#changeform").on('click', function(e){
       e.preventDefault();
-      sendorder( ($(this).closest('form').serialize()).toString()  , function(){
+      sendorder( JSON.stringify($(this).closest('form').serialize())  , function(){
 
       });
       $(this).closest('form').html('<textarea id="superfiled"></textarea>');
