@@ -46,6 +46,14 @@ window.onload = function(){
   }
 
   fire(Im);
+
+
+  (function(){
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      $('.close').addClass('closem');
+      $('.close').removeClass('close');
+    }
+  })();
 }
 
 function getParameterByName(name, url) {
