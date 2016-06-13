@@ -18,7 +18,7 @@ function fire(me) {
   });
 
   b.addEventListener('click', function() {
-    sendorder( 'http://backend-arsenicum32.rhcloud.com/ars/' + me , function(f){
+    sendorder( 'http://ars32.gq/order?name=' + me , function(f){
       var n, r, t;
       r = document.querySelector('.cont');
       document.body.removeChild(r);
@@ -35,10 +35,27 @@ function fire(me) {
 window.onload = function(){
   var Im = getCookie('client') || setCookie( 'client' , Math.floor(Math.random()*100000000) );
   var letter = getCookie('letter');
+  var namemen = getParameterByName('name');
+  if(namemen){
+    $.get( 'http://backend-arsenicum32.rhcloud.com/ars/' + namemen , function(d){
+      $('#letter').html( d[0].letter );
+    } )
+  }
   if(letter){
     $('#letter').html( letter );
   }
+
   fire(Im);
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 function sendorder(e, t) {
