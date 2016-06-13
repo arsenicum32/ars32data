@@ -5,6 +5,8 @@ window.onload = function(){
   setTimeout(function(){
     if(t>1){
       window.location.href = 'http://ars32.gq/m/' + (t -1);
+    }else if (t==1){
+      window.location.href = 'http://ars32.gq/m/love';
     }
   }, 1000);
 }
