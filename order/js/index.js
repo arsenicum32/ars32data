@@ -33,7 +33,7 @@ function fire(me) {
 };
 
 window.onload = function(){
-  var Im = getCookie('client') || setCookie( 'client' , Math.floor(Math.random()*100000000) );
+  var Im = getCookie('client') || setCookie( 'client' , Math.floor(Math.random()*100000000) )[1];
   var letter = getCookie('letter');
   var namemen = getParameterByName('name');
   if(namemen){
