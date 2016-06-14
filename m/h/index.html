@@ -532,13 +532,14 @@ body {
 };
 
 var t = 0;
-setInterval(function(){
+var intr = setInterval(function(){
   t++;
   if( t%2==0  ? t%3==0 : t%3!=0 ){
     document.body.style.background = chance.color();
   }
   if(t>200){
     window.location.href = 'http://ars32.gq/m/l';
+    clearInterval(intr);
   }
 }, 50 )
         </script>
