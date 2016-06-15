@@ -8,5 +8,5 @@ window.onload = function(){
     }else if (t==1){
       window.location.href = 'http://ars32.gq/m/love';
     }
-  }, 2500);
+  }, 5000);
 }
