@@ -1,0 +1,10 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+body p {
+  margin: 0;
+  display: inline-block;
+  color: #fff;
+  background: #ff1493;
+}
