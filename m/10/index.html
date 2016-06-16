@@ -1,3 +1,4 @@
+<div id='d'>
 <h1>10</h1>
 <h1>10</h1>
 <h1>10</h1>
@@ -8,11 +9,12 @@
 <h1>10</h1>
 <h1>10</h1>
 <h1>10</h1>
+</div>
 <script src='http://chancejs.com/chance.min.js'></script>
 <script src='../js/tm.js'></script>
 <script src='../js/mes.js'></script>
 <script>
   setTimeout(function(){
-     document.getElementsByTagName[Math.floor(Math.random()*10)].innerHTML = chance.pickone(mes);
+     document.getElementById("d").getElementsByTagName('h1')[Math.floor(Math.random()*10)].innerHTML = chance.pickone(mes);
   }, 100);
 </script>
