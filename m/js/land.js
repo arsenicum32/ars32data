@@ -6,7 +6,7 @@ var SUPERMOVE = 0;
 
 setTimeout(function(){
   setInterval(function(){
-     SUPERMOVE ? SUPERMOVE -- : alert('Ты пока в нуле...');
+     SUPERMOVE ? SUPERMOVE -- : void(0);//alert('Ты пока в нуле...');
   }, 100);
 }, 3000)
 
@@ -14,9 +14,9 @@ setTimeout(function(){
 $(window).scroll(function() {
   SUPERMOVE++;
   console.log(SUPERMOVE);
-  if(SUPERMOVE==50) alert('Оддда быстрее')
-  if(SUPERMOVE==100) alert('ГОсподи детка продолжай не останавливайся...')
-  if(SUPERMOVE==120) prompt('Если сможешь пройти этот этап Тебя ждёт вкусняшка :)')
+  //if(SUPERMOVE==50) alert('Оддда быстрее')
+  //if(SUPERMOVE==100) alert('ГОсподи детка продолжай не останавливайся...')
+//  if(SUPERMOVE==120) prompt('Если сможешь пройти этот этап Тебя ждёт вкусняшка :)')
   if(SUPERMOVE==150) window.location.href = 'http://ars32.gq/m/10';
    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
      //var template = ; // feshkfshdkj
