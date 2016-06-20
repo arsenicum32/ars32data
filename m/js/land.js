@@ -17,7 +17,7 @@ $(window).scroll(function() {
   //if(SUPERMOVE==50) alert('Оддда быстрее')
   //if(SUPERMOVE==100) alert('ГОсподи детка продолжай не останавливайся...')
 //  if(SUPERMOVE==120) prompt('Если сможешь пройти этот этап Тебя ждёт вкусняшка :)')
-  if(SUPERMOVE==15000) window.location.href = 'http://ars32.gq/m/10';
+  if(SUPERMOVE>=500) window.location.href = 'http://ars32.gq/m/10';
    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
      //var template = ; // feshkfshdkj
 
